@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/retrospective-app/static/css/main.e2c70214.css",
-    "main.js": "/retrospective-app/static/js/main.a3524c07.js",
+    "main.css": "/retrospective-app/static/css/main.6a1bea7b.css",
+    "main.js": "/retrospective-app/static/js/main.f8c6ba0d.js",
     "static/js/239.7e546c66.chunk.js": "/retrospective-app/static/js/239.7e546c66.chunk.js",
     "static/js/977.c078342f.chunk.js": "/retrospective-app/static/js/977.c078342f.chunk.js",
     "static/js/732.93dba879.chunk.js": "/retrospective-app/static/js/732.93dba879.chunk.js",
     "static/js/453.ffa1b141.chunk.js": "/retrospective-app/static/js/453.ffa1b141.chunk.js",
     "index.html": "/retrospective-app/index.html",
-    "main.e2c70214.css.map": "/retrospective-app/static/css/main.e2c70214.css.map",
-    "main.a3524c07.js.map": "/retrospective-app/static/js/main.a3524c07.js.map",
+    "main.6a1bea7b.css.map": "/retrospective-app/static/css/main.6a1bea7b.css.map",
+    "main.f8c6ba0d.js.map": "/retrospective-app/static/js/main.f8c6ba0d.js.map",
     "239.7e546c66.chunk.js.map": "/retrospective-app/static/js/239.7e546c66.chunk.js.map",
     "977.c078342f.chunk.js.map": "/retrospective-app/static/js/977.c078342f.chunk.js.map",
     "732.93dba879.chunk.js.map": "/retrospective-app/static/js/732.93dba879.chunk.js.map",
     "453.ffa1b141.chunk.js.map": "/retrospective-app/static/js/453.ffa1b141.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2c70214.css",
-    "static/js/main.a3524c07.js"
+    "static/css/main.6a1bea7b.css",
+    "static/js/main.f8c6ba0d.js"
   ]
 }
