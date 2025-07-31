@@ -1,0 +1,102 @@
+.board-section {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-height: 200px;
+  transition: background-color 0.3s;
+}
+
+.board-section.drag-over {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.board-section.keep {
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 30%;
+}
+
+.board-section.stop {
+  top: 30%;
+  left: 0;
+  width: 30%;
+  height: 40%;
+}
+
+.board-section.start {
+  top: 30%;
+  right: 0;
+  width: 30%;
+  height: 40%;
+}
+
+.board-section.puzzling {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.board-section.less {
+  bottom: 0;
+  left: 0;
+  width: 35%;
+  height: 30%;
+}
+
+.board-section.more {
+  bottom: 0;
+  right: 0;
+  width: 35%;
+  height: 30%;
+}
+
+.section-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.add-note-btn {
+  align-self: flex-start;
+  padding: 12px 24px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px dashed #666;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s;
+  color: #333;
+  min-width: 120px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-note-btn:hover {
+  background: white;
+  border-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.add-note-btn:active {
+  transform: translateY(0);
+}
+
+.notes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  overflow-y: auto;
+  max-height: calc(100% - 100px);
+}

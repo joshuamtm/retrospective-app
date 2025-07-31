@@ -1,38 +1,344 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.help-btn,
+.export-btn,
+.import-btn,
+.clear-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.help-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+.help-btn:hover {
+  background: white;
+  color: #0066cc;
+}
+
+.export-btn,
+.import-btn {
+  background: white;
+  color: #0066cc;
+  border: 2px solid white;
+}
+
+.export-btn:hover,
+.import-btn:hover {
+  background: #f0f0f0;
+}
+
+.export-btn.secondary {
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.clear-btn {
+  background: rgba(255, 100, 100, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 100, 100, 0.5);
+}
+
+.clear-btn:hover {
+  background: rgba(255, 100, 100, 0.3);
+  border-color: rgba(255, 100, 100, 0.8);
+}
+
+.export-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.import-message {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 500;
+  z-index: 1000;
+  animation: slideDown 0.3s ease;
+}
+
+.import-message.success {
+  background: #4caf50;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.import-message.error {
+  background: #f44336;
+  color: white;
 }
 
-@keyframes App-logo-spin {
+@keyframes slideDown {
   from {
-    transform: rotate(0deg);
+    transform: translateX(-50%) translateY(-20px);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+.retrospective-board {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.board-background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 5px solid #0066cc;
+  background: white;
+  overflow: hidden;
+}
+
+.board-background::before,
+.board-background::after {
+  content: '';
+  position: absolute;
+  background: #0066cc;
+}
+
+.board-background::before {
+  top: 30%;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.board-background::after {
+  bottom: 30%;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: white;
+  border: 5px solid #0066cc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.question-mark {
+  font-size: 120px;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+.board-background::before,
+.board-background::after {
+  content: '';
+  position: absolute;
+  background: #0066cc;
+  z-index: 1;
+}
+
+.board-background::before {
+  top: 30%;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.board-background::after {
+  bottom: 30%;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.board-section.keep::before,
+.board-section.stop::after,
+.board-section.start::after,
+.board-section.less::before,
+.board-section.more::before {
+  content: '';
+  position: absolute;
+  background: #0066cc;
+  z-index: 1;
+}
+
+.board-section.keep::before {
+  bottom: 0;
+  left: 25%;
+  right: 25%;
+  height: 5px;
+}
+
+.board-section.stop::after {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 5px;
+}
+
+.board-section.start::after {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+}
+
+.board-section.less::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+.board-section.more::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+}
+
+/* Accessibility improvements */
+*:focus {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .header-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .header-buttons button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .export-dropdown {
+    flex-direction: row;
+  }
+
+  .board-section {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .board-background {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+  }
+
+  .center-circle {
+    position: static;
+    transform: none;
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+  }
+
+  .question-mark {
+    font-size: 80px;
+  }
+
+  .sticky-note {
+    width: 150px;
+    min-height: 120px;
+    padding: 15px 10px 10px;
+  }
+
+  .notes-container {
+    justify-content: center;
+  }
+
+  .empty-state {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .section-guide {
+    grid-template-columns: 1fr;
   }
 }
