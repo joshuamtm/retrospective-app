@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
+import { TouchBackend } from 'react-dnd-touch-backend';
+import { MultiBackend } from 'react-dnd-multi-backend';
 import { BoardSection } from './components/BoardSection';
 import { HelpModal } from './components/HelpModal';
 import { EmptyState } from './components/EmptyState';
@@ -10,6 +12,23 @@ import * as html2canvas from 'html-to-image';
 import { jsPDF } from 'jspdf';
 import { exportToJSON, importFromJSON } from './utils/pdfImport';
 import './App.css';
+
+const HTML5toTouch = {
+  backends: [
+    {
+      id: 'html5',
+      backend: HTML5Backend,
+      transition: TouchBackend,
+    },
+    {
+      id: 'touch',
+      backend: TouchBackend,
+      options: { enableMouseEvents: true },
+      preview: true,
+      transition: HTML5Backend,
+    },
+  ],
+};
 
 const sections: Section[] = [
   { id: 'keep', title: 'KEEP', color: '#0099cc' },
@@ -146,7 +165,7 @@ function App() {
   };
 
   return (
-    <DndProvider backend={HTML5Backend}>
+    <DndProvider backend={MultiBackend} options={HTML5toTouch}>
       <div className="App">
         <header className="app-header">
           <h1>Team Retrospective Board</h1>

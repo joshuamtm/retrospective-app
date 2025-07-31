@@ -324,9 +324,30 @@ body {
   }
 
   .sticky-note {
-    width: 150px;
+    min-width: 160px;
+    max-width: 280px;
     min-height: 120px;
-    padding: 15px 10px 10px;
+    padding: 20px 15px 15px;
+    margin: 8px;
+  }
+
+  .sticky-note .edit-hint {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .sticky-note .drag-indicator {
+    opacity: 0.4 !important;
+    transform: scale(1.2);
+  }
+
+  .sticky-note .note-textarea {
+    font-size: 16px;
+    min-height: 100px;
+  }
+
+  .character-counter {
+    font-size: 12px;
   }
 
   .notes-container {
