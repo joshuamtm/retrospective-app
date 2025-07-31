@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/retrospective-app/static/css/main.c2d68182.css",
+    "main.js": "/retrospective-app/static/js/main.e3616f0c.js",
+    "static/js/239.7e546c66.chunk.js": "/retrospective-app/static/js/239.7e546c66.chunk.js",
+    "static/js/977.c078342f.chunk.js": "/retrospective-app/static/js/977.c078342f.chunk.js",
+    "static/js/732.93dba879.chunk.js": "/retrospective-app/static/js/732.93dba879.chunk.js",
+    "static/js/453.ffa1b141.chunk.js": "/retrospective-app/static/js/453.ffa1b141.chunk.js",
+    "index.html": "/retrospective-app/index.html",
+    "main.c2d68182.css.map": "/retrospective-app/static/css/main.c2d68182.css.map",
+    "main.e3616f0c.js.map": "/retrospective-app/static/js/main.e3616f0c.js.map",
+    "239.7e546c66.chunk.js.map": "/retrospective-app/static/js/239.7e546c66.chunk.js.map",
+    "977.c078342f.chunk.js.map": "/retrospective-app/static/js/977.c078342f.chunk.js.map",
+    "732.93dba879.chunk.js.map": "/retrospective-app/static/js/732.93dba879.chunk.js.map",
+    "453.ffa1b141.chunk.js.map": "/retrospective-app/static/js/453.ffa1b141.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2d68182.css",
+    "static/js/main.e3616f0c.js"
+  ]
+}
