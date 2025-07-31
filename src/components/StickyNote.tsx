@@ -23,22 +23,29 @@ export const StickyNote: React.FC<StickyNoteProps> = React.memo(({ note, onUpdat
   // Auto-sizing calculations
   const noteDimensions = useMemo(() => {
     const textLength = note.text.length;
-    const lineCount = note.text.split('\n').length;
-    const wordsPerLine = Math.max(1, Math.floor(textLength / lineCount));
+    const lines = note.text.split('\n');
+    const lineCount = Math.max(1, lines.length);
     
-    // Dynamic width: 180px to 300px based on content
-    const baseWidth = 180;
-    const maxWidth = 300;
-    const widthFactor = Math.min(1, wordsPerLine / 20);
+    // Calculate average characters per line for width
+    const avgCharsPerLine = textLength > 0 ? textLength / lineCount : 0;
+    
+    // Dynamic width: 200px to 280px based on content
+    const baseWidth = 200;
+    const maxWidth = 280;
+    const widthFactor = Math.min(1, avgCharsPerLine / 30); // ~30 chars for max width
     const width = baseWidth + (maxWidth - baseWidth) * widthFactor;
     
-    // Dynamic height: 120px minimum, grows with lines
-    const baseHeight = 120;
-    const lineHeight = 22;
-    const padding = 40;
-    const height = Math.max(baseHeight, lineCount * lineHeight + padding);
+    // Dynamic height: More conservative calculation
+    const baseHeight = 140; // Slightly larger base
+    const lineHeight = 20; // More compact line height
+    const padding = 60; // Account for header, counter, and padding
+    const contentHeight = Math.max(1, lineCount) * lineHeight;
+    const height = Math.max(baseHeight, contentHeight + padding);
     
-    return { width: Math.round(width), height: Math.round(height) };
+    return { 
+      width: Math.round(Math.max(200, Math.min(280, width))), 
+      height: Math.round(Math.max(140, Math.min(400, height)))
+    };
   }, [note.text]);
 
   const [{ isDragging }, drag] = useDrag(() => ({
@@ -104,8 +111,10 @@ export const StickyNote: React.FC<StickyNoteProps> = React.memo(({ note, onUpdat
   useEffect(() => {
     if (isEditing && textareaRef.current) {
       const textarea = textareaRef.current;
+      // Reset height to auto to get the natural scroll height
       textarea.style.height = 'auto';
-      textarea.style.height = `${Math.min(textarea.scrollHeight, 300)}px`;
+      // Set height to content height without scroll
+      textarea.style.height = `${textarea.scrollHeight}px`;
       textarea.focus();
     }
   }, [isEditing, text]);
