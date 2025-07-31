@@ -1,46 +1,121 @@
-# Getting Started with Create React App
+# 🎯 Interactive Retrospective Board
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, user-friendly web application for conducting team retrospectives with drag-and-drop sticky notes.
 
-## Available Scripts
+## 🌟 Live Demo
 
-In the project directory, you can run:
+**[Try it now →](https://joshuamtm.github.io/retrospective-app/)**
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Core Functionality
+- **6 Retrospective Sections**: KEEP, STOP, START, LESS, MORE, and PUZZLING
+- **Interactive Sticky Notes**: Create, edit, delete, and color-code notes
+- **Drag & Drop**: Move notes between sections seamlessly
+- **Color Selection**: 4 color options (Yellow, Pink, Blue, Green)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### User Experience
+- **Empty State Guidance**: Helpful onboarding for new users
+- **Visual Feedback**: Clear drag indicators and hover effects
+- **Mobile Responsive**: Works great on desktop, tablet, and mobile
+- **Accessibility**: ARIA labels, keyboard navigation, and screen reader support
 
-### `npm test`
+### Data Management
+- **Export to PDF**: Save your retrospective board as a high-quality PDF
+- **Export to JSON**: Export data for reliable reimporting
+- **Import from JSON**: Load previous retrospective data
+- **Clear Board**: Start fresh with confirmation dialog
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Help & Guidance
+- **Comprehensive Help Modal**: Learn about retrospectives and how to use the app
+- **Visual Hints**: Edit indicators and usage tips throughout the interface
 
-### `npm run build`
+## 🚀 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### For Teams
+1. Visit the [live application](https://joshuamtm.github.io/retrospective-app/)
+2. Click "Get Started" or "Add Note" in any section
+3. Double-click notes to edit them
+4. Drag notes between sections to organize
+5. Export your board when finished
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### For Developers
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# Clone the repository
+git clone https://github.com/joshuamtm/retrospective-app.git
+cd retrospective-app
 
-### `npm run eject`
+# Install dependencies
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Start development server
+npm start
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Build for production
+npm run build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Deploy to GitHub Pages
+npm run deploy
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🛠️ Technology Stack
 
-## Learn More
+- **React 18** with TypeScript
+- **react-dnd** for drag and drop functionality
+- **html-to-image** and **jsPDF** for PDF export
+- **CSS3** with responsive design
+- **GitHub Pages** for deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📱 Mobile Support
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application is fully responsive and provides an optimized experience on mobile devices:
+- Stacked section layout for mobile screens
+- Touch-friendly button sizes
+- Simplified interactions for small screens
+
+## ♿ Accessibility
+
+Built with accessibility in mind:
+- ARIA labels and landmarks
+- Keyboard navigation support
+- Focus indicators
+- Screen reader compatibility
+- High contrast ratios
+
+## 🎨 Design Philosophy
+
+This application follows modern UX principles:
+- **Progressive Disclosure**: Features revealed as needed
+- **Visual Hierarchy**: Clear information structure
+- **Immediate Feedback**: Real-time response to user actions
+- **Error Prevention**: Confirmations for destructive actions
+
+## 📊 What is a Retrospective?
+
+A retrospective is a team meeting held at the end of a project sprint or iteration to reflect on what happened and identify improvements for the future. It's a key practice in Agile methodologies that helps teams continuously improve their processes.
+
+### The 5+1 Framework
+
+- **KEEP**: What worked well and should continue
+- **STOP**: What didn't work and should be discontinued
+- **START**: New ideas or practices to try
+- **LESS**: What to reduce or scale back
+- **MORE**: What to do more of
+- **PUZZLING**: Questions or unclear items needing discussion
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+Built with [Claude Code](https://claude.ai/code) - Anthropic's AI coding assistant.
+
+---
+
+**Made with ❤️ for better team retrospectives**
