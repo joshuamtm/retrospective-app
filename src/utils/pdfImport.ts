@@ -108,7 +108,7 @@ export const importFromPDF = async (file: File): Promise<Note[]> => {
           const notes: Note[] = [];
           
           // Process each text block
-          result.data.blocks.forEach(block => {
+          result.data.blocks?.forEach(block => {
             if (block.text.trim() && 
                 !block.text.includes('KEEP') && 
                 !block.text.includes('STOP') && 
