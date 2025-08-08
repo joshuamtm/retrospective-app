@@ -2,13 +2,6 @@ import Tesseract from 'tesseract.js';
 import { Note, NoteColor, SectionType } from '../types';
 import { v4 as uuidv4 } from 'uuid';
 
-interface ExtractedNote {
-  text: string;
-  section: SectionType;
-  color: NoteColor;
-  bounds: { x: number; y: number; width: number; height: number };
-}
-
 // Section boundaries based on the layout
 const SECTION_BOUNDS = {
   keep: { x: 0.25, y: 0, width: 0.5, height: 0.3 },

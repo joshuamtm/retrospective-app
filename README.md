@@ -1,18 +1,32 @@
 # 🎯 Interactive Retrospective Board
 
-A modern, user-friendly web application for conducting team retrospectives with drag-and-drop sticky notes.
+A modern, real-time collaborative web application for conducting team retrospectives with drag-and-drop sticky notes and multi-user support.
 
 ## 🌟 Live Demo
 
 **[Try it now →](https://joshuamtm.github.io/retrospective-app/)**
 
+## 🚀 NEW: Real-Time Collaboration
+
+The app now supports **multiple users working on the same board simultaneously**! 
+- Create a board and share the URL with your team
+- See changes instantly as team members add, edit, or move notes
+- Perfect for remote teams and distributed retrospectives
+
 ## ✨ Features
 
 ### Core Functionality
+- **Real-Time Collaboration**: Multiple users can work on the same board simultaneously
 - **6 Retrospective Sections**: KEEP, STOP, START, LESS, MORE, and PUZZLING
 - **Interactive Sticky Notes**: Create, edit, delete, and color-code notes
 - **Drag & Drop**: Move notes between sections seamlessly
 - **Color Selection**: 4 color options (Yellow, Pink, Blue, Green)
+
+### Multi-User Features
+- **Unique Board URLs**: Each board has its own shareable URL
+- **Instant Synchronization**: Changes appear in real-time for all users
+- **Anonymous Collaboration**: No sign-up required to participate
+- **Board Persistence**: Boards are saved automatically in the cloud
 
 ### User Experience
 - **Empty State Guidance**: Helpful onboarding for new users
@@ -25,6 +39,7 @@ A modern, user-friendly web application for conducting team retrospectives with 
 - **Export to JSON**: Export data for reliable reimporting
 - **Import from JSON**: Load previous retrospective data
 - **Clear Board**: Start fresh with confirmation dialog
+- **Local Mode**: Option to use the app offline without collaboration
 
 ### Help & Guidance
 - **Comprehensive Help Modal**: Learn about retrospectives and how to use the app
@@ -49,6 +64,10 @@ cd retrospective-app
 # Install dependencies
 npm install
 
+# Set up Firebase (see FIREBASE_SETUP.md for detailed instructions)
+cp .env.example .env
+# Edit .env with your Firebase configuration
+
 # Start development server
 npm start
 
@@ -59,9 +78,21 @@ npm run build
 npm run deploy
 ```
 
+#### Firebase Setup
+For multi-user functionality, you'll need to set up Firebase:
+1. Create a Firebase project
+2. Enable Anonymous Authentication
+3. Create a Firestore database
+4. Add your configuration to `.env`
+
+See [FIREBASE_SETUP.md](FIREBASE_SETUP.md) for detailed instructions.
+
 ## 🛠️ Technology Stack
 
 - **React 18** with TypeScript
+- **Firebase** for real-time database and authentication
+- **Firestore** for data persistence
+- **react-router-dom** for navigation
 - **react-dnd** for drag and drop functionality
 - **html-to-image** and **jsPDF** for PDF export
 - **CSS3** with responsive design
